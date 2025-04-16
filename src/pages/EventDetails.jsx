@@ -46,7 +46,13 @@ const EventDetails = () => {
                 />
                 <p className="pt-3"><strong>Description:</strong> {event.description}</p>
                 <p><strong>Type:</strong> {event.type}</p>
-                <p><strong>Date:</strong> {new Date(event.date).toLocaleString('en-GB', {
+                <h2>Additional Information</h2>
+                <p><strong>Age Restrictions:</strong> {event.restrictions}</p>
+                <p><strong>Dress Code:</strong> {event.dressCode}</p>
+              </div>
+            </div>
+            <div className="col-6">
+            <p><strong>🕒</strong> {new Date(event.date).toLocaleString('en-GB', {
                   weekday: 'short',
                   year: 'numeric',
                   month: 'short',
@@ -56,11 +62,8 @@ const EventDetails = () => {
                   hour12: true,
                   timeZone: 'Asia/Kolkata',
                 })}</p>
-                <h2>Additional Information</h2>
-                <p><strong>Age Restrictions:</strong> {event.restrictions}</p>
-              </div>
-            </div>
-            <div className="col-6">
+              <p><strong>📍</strong> {event.address}</p>
+              <p><strong>💲</strong> {event.price > 0 ? event.price : "Free"}</p>
             </div>
           </div>
         </div>
