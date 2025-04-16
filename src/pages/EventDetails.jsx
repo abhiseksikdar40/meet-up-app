@@ -10,7 +10,7 @@ const EventDetails = () => {
 
   const fetchEventDetails = async () => {
     try {
-      const response = await fetch(`http://localhost:2020/events/${eventId}`);
+      const response = await fetch(`https://meet-up-backend-one.vercel.app/events/${eventId}`);
 
       if (!response.ok) {
         throw new Error("Event not found");
