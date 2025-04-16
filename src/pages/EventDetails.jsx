@@ -31,7 +31,7 @@ const EventDetails = () => {
   return (
     <>
     <Header/>
-    <main className="py-5">
+    <main className="py-3">
       {event && (
         <div className="container text-light">
           <div className="row">
@@ -51,8 +51,11 @@ const EventDetails = () => {
                 <p><strong>Dress Code:</strong> {event.dressCode}</p>
               </div>
             </div>
-            <div className="col-6">
-            <p><strong>🕒</strong> {new Date(event.date).toLocaleString('en-GB', {
+            <div className="col-6 pe-5">
+            <div className="card">
+              <div className="card-body">
+                <div className="card-text">
+                <p><strong>🕒</strong> {new Date(event.date).toLocaleString('en-GB', {
                   weekday: 'short',
                   year: 'numeric',
                   month: 'short',
@@ -64,6 +67,9 @@ const EventDetails = () => {
                 })}</p>
               <p><strong>📍</strong> {event.address}</p>
               <p><strong>💲</strong> {event.price > 0 ? event.price : "Free"}</p>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
         </div>
