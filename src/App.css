@@ -43,7 +43,7 @@
 
 nav.navbar,
 nav.navbar * {
-  font-family: "Playwrite AU SA", cursive;
+  font-family: "Poetsen One", sans-serif;
   background-color: transparent !important;
   box-shadow: none !important;
   border: none !important;
@@ -81,5 +81,5 @@ body {
 }
 
 footer {
-  font-family: 'Playwrite AU SA', cursive;
+  font-family: "Poetsen One", sans-serif;
 }
