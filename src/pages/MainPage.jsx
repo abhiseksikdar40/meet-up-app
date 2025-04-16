@@ -9,7 +9,6 @@ const MainPage = () => {
 
   const filteredEvents = selectedType === "All" ? data : data?.filter(event => event.type?.includes(selectedType));
 
-
   return (
     <>
       <div className="d-flex justify-content-between align-items-center mb-4">

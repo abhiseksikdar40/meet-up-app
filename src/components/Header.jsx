@@ -13,15 +13,8 @@ const Header = () => {
           <input
             className="form-control me-2 search-input"
             type="search"
-            placeholder="Search by title & tags"
-            aria-label="Search"
+            placeholder="🔍 Search by title & tags"
           />
-          <button
-            className="btn search-button"
-            type="submit"
-          >
-            Search
-          </button>
         </form>
       </div>
     </nav>
