@@ -14,7 +14,7 @@ const MainPage = () => {
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h1 className="fw-bold text-light">Meetup Events</h1>
         <select
-          className="w-auto form-select"
+          className="w-auto form-select bg-secondary text-light"
           style={{ minWidth: '180px' }}
           value={selectedType}
           onChange={(e) => setSelectedType(e.target.value)}

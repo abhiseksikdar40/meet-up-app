@@ -3,6 +3,8 @@ import logo from '../assets/meetUp-logo.png';
 
 const Header = () => {
   return (
+    <>
+    <div className='container'>
     <nav className="navbar" style={{ backgroundColor: 'transparent' }}>
       <div className="container-fluid">
         <Link to="/" className="navbar-brand d-flex align-items-center">
@@ -18,6 +20,9 @@ const Header = () => {
         </form>
       </div>
     </nav>
+     <hr className='text-light'/>
+     </div>
+     </>
   );
 };
 

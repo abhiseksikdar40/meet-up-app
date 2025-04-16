@@ -8,15 +8,13 @@ function App() {
 
   return (
     <>
-      <header className='container'>
+      <header>
         <Header />
-        <hr className='text-light'/>
       </header>
       <main className='container py-5'>
         <MainPage />
       </main>
       <footer>
-      <hr className='text-light'/>
         <Footer />
       </footer>
     </>

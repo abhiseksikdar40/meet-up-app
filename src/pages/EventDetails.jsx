@@ -12,7 +12,7 @@ const EventDetails = () => {
       const response = await fetch(`https://meet-up-backend-one.vercel.app/events/${eventId}`);
 
       if (!response.ok) {
-        throw new Error("Event not found");
+        throw "Event not found";
       }
 
       const data = await response.json();
@@ -46,10 +46,17 @@ const EventDetails = () => {
                 <h2>Additional Information</h2>
                 <p><strong>Age Restrictions:</strong> {event.restrictions}</p>
                 {event.dressCode && <p><strong>Dress Code:</strong> {event.dressCode}</p>}
+                <h3>Event Tags:</h3>
+                <div className="d-flex flex-wrap gap-2">
+                {event.tags?.map((tag, index) => (
+                  <span key={index} className="badge bg-danger py-2 px-4 fs-6">{tag}</span>
+                ))}
+              </div>
+
               </div>
             </div>
-            <div className="col-4">
-            <div className="card mb-4" style={{width: "400px", height: "200px"}}>
+            <div className="col-4" style={{paddingLeft: "100px"}}>
+            <div className="card mb-4 bg-secondary text-white" style={{width: "360px", height: "200px"}}>
               <div className="card-body">
                 <div className="card-text">
                 <p className="mb-2"><strong>🕒</strong> {new Date(event.date).toLocaleString('en-GB', {
@@ -71,13 +78,14 @@ const EventDetails = () => {
             <h5><strong>Speakers: ({event.speakers?.length || 0})</strong></h5>
             <div className="d-flex flex-wrap gap-2 mb-3">
               {event.speakers?.map((speakerName, index) => (
-                <div key={index} className="card p-2 text-center" style={{ width: "120px" }}>
+                <div key={index} className="card p-2 text-center" style={{ width: "150px", height: "150px" }}>
                   <img
                     src={event.speakersImageUrl?.[index]}
                     alt={speakerName}
-                    className="img-fluid rounded-circle mb-2"
+                    className="img-fluid rounded-circle"
                     style={{ width: "70px", height: "70px", objectFit: "cover", margin: "0 auto" }}
                   />
+                  <hr />
                   <p className="mb-0"><strong>{speakerName}</strong></p>
                 </div>
               ))}
