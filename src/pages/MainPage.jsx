@@ -25,7 +25,15 @@ const MainPage = () => {
         </select>
       </div>
 
-      <div className='row'>
+      <div>
+        {loading ?  (
+            <div className="d-flex justify-content-center align-items-center" style={{ height: "80vh" }}>
+                <div className="spinner-border text-success" style={{ width: "3rem", height: "3rem" }}>
+                </div>
+                <span className='px-2'>Loading...</span>
+            </div>
+        ) : (
+          <div className='row'>
         {filteredEvents?.map(event => (
           <div className='col-md-4 mb-4' key={event._id}>
             <div className="card bg-transparent" style={{ height: "400px" }}>
@@ -67,6 +75,8 @@ const MainPage = () => {
             </div>
           </div>
         ))}
+      </div>
+        )}
       </div>
     </>
   );
