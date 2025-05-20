@@ -7,22 +7,24 @@ const EventDetails = () => {
   const { eventId } = useParams();
   const [event, setEvent] = useState(null);
 
-  const fetchEventDetails = async () => {
-    try {
-      const response = await fetch(`https://meet-up-backend-one.vercel.app/events/${eventId}`);
+  useEffect(() => {
+    const fetchEventDetails = async () => {
+      try {
+        const response = await fetch(`https://meet-up-backend-one.vercel.app/events/${eventId}`);
 
-      if (!response.ok) {
-        throw "Event not found";
+        if (!response.ok) {
+          throw new Error("Event not found");
+        }
+
+        const data = await response.json();
+        setEvent(data);
+      } catch (error) {
+        console.log("Failed to fetch event details!", error);
       }
-
-      const data = await response.json();
-      setEvent(data);
-    } catch (error) {
-      console.log("Failed to fetch event details!", error)
-    }
-  };
+    };
 
     fetchEventDetails();
+  }, [eventId]);
 
 
   return (
@@ -94,7 +96,6 @@ const EventDetails = () => {
                       </div>
                     </div>
                   )}
-
                   </main>
       <Footer/>
     </>
