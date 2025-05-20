@@ -3,7 +3,7 @@ import useFetch from '../useFetch';
 import { Link } from 'react-router-dom';
 
 const MainPage = () => {
-  const { data, loading, error } = useFetch("https://meet-up-app-wheat.vercel.app/events");
+  const { data, loading, error } = useFetch("https://meet-up-backend-one.vercel.app/events");
   const [selectedType, setSelectedType] = useState("All");
 
 
