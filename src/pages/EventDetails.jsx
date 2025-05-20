@@ -10,7 +10,7 @@ const EventDetails = () => {
   useEffect(() => {
     const fetchEventDetails = async () => {
       try {
-        const response = await fetch(`https://meet-up-backend-one.vercel.app/events/${eventId}`);
+        const response = await fetch(`https://meet-up-app-wheat.vercel.app/events/${eventId}`);
 
         if (!response.ok) {
           throw new Error("Event not found");
