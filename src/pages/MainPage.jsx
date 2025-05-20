@@ -66,7 +66,7 @@ const MainPage = () => {
                         })}
                       </small>
                     </p>
-                    <Link className='nav-link text-light' to={`/allevents/${event._id}`}>
+                    <Link className='nav-link text-light' to={`/events/${event._id}`}>
                       <h3 className='card-title'>{event.title}</h3>
                     </Link>
                   </div>
